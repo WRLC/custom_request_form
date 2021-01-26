@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <!--**** Added to apply responsive design ****-->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- viewport -->
+  <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <!-- Displays page as webapp -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Color header in chrome -->
+  <meta name="theme-color" content="#076291">
+  <!--**** End Add to apply responsive design ****-->
+  <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="headersearch" align="center">
+    <span class="wrlc-title">
+      <img align="absmiddle" src="{{ url_for('static', filename='images/wrlc_logo_white.png') }}" height="44px" width="44px" /> <a href="https://www.wrlc.org">WRLC Library Services</a>
+    </span>
+  </div>
+  <center>
+    <div class="motd"> </div>
+    <div class="finesbox">
+      {% block content %}{% endblock %}
+    </div>
+  </center>
+  <div class="footer">
+    <br />This website is a service of the <a href="https://www.wrlc.org" target="_blank">Washington Research Library Consortium</a>
+  </div>
+</body>
+</html>

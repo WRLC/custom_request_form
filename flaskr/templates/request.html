@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>WRLC Custom Request Form</title>
-  <!--**** Added to apply responsive design ****-->
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <!-- viewport -->
-  <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-  <!-- Displays page as webapp -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <!-- Color header in chrome -->
-  <meta name="theme-color" content="#076291">
-  <!--**** End Add to apply responsive design ****-->
-  <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-  <div class="headersearch" align="center">
-    <span class="wrlc-title">
-      <img align="absmiddle" src="{{ url_for('static', filename='images/wrlc_logo_white.png') }}" height="44px" width="44px" /> <a href="https://www.wrlc.org">WRLC Library Services</a>
-    </span>
-  </div>
-  <center>
-    <div class="motd"> </div>
-    <div class="finesbox">
-      <div class="form">
-        <center>
-          <div class="book-title">WRLC Custom Request Form</div>
-        </center>
-        {% block content %}{% endblock %}
-      </div>
-    </div>
-  </center>
-  <div class="footer">
-    <br />This website is a service of the <a href="https://www.wrlc.org" target="_blank">Washington Research Library Consortium</a>
-  </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+  <h1>WRLC Custom Request Form</h1>
+  <form action="" method="post" novalidate>
+    {{ form.csrf_token }}
+    <div>{{ form.genre.label }} {{ form.genre(size=32) }}</div>
+    <div>{{ form.title.label }} {{ form.title(size=32) }}</div>
+    <div>{{ form.stitle.label }} {{ form.stitle(size=32) }}</div>
+    <div>{{ form.atitle.label }} {{ form.atitle(size=32) }}</div>
+    <div>{{ form.date.label }} {{ form.date(size=32) }}</div>
+    <div>{{ form.month.label }} {{ form.month(size=32) }}</div>
+    <div>{{ form.volume.label }} {{ form.volume(size=32) }}</div>
+    <div>{{ form.issue.label }} {{ form.issue(size=32) }}</div>
+    <div>{{ form.number.label }} {{ form.number(size=32) }}</div>
+    <div>{{ form.epage.label }} {{ form.epage(size=32) }}</div>
+    <div>{{ form.spage.label }} {{ form.spage(size=32) }}</div>
+    <div>{{ form.edition.label }} {{ form.edition(size=32) }}</div>
+    <div>{{ form.isbn.label }} {{ form.isbn(size=32) }}</div>
+    <div>{{ form.eisbn.label }} {{ form.eisbn(size=32) }}</div>
+    <div>{{ form.aulast.label }} {{ form.aulast(size=32) }}</div>
+    <div>{{ form.aufirst.label }} {{ form.aufirst(size=32) }}</div>
+    <div>{{ form.auinit.label }} {{ form.auinit(size=32) }}</div>
+    <div>{{ form.pub.label }} {{ form.pub(size=32) }}</div>
+    <div>{{ form.publisher.label }} {{ form.publisher(size=32) }}</div>
+    <div>{{ form.place.label }} {{ form.place(size=32) }}</div>
+    <div>{{ form.doi.label }} {{ form.doi(size=32) }}</div>
+    <div>{{ form.rfe_dat.label }} {{ form.rfe_dat(size=32) }}</div>
+    <div>{{ form.genre.label }} {{ form.genre(size=32) }}</div>
+    <div>{{ form.rfr_id.label }} {{ form.rfr_id(size=32) }}</div>
+    <div>{{ form.submit() }}</div>
+  </form>
+{% endblock %}

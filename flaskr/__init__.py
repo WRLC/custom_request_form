@@ -2,7 +2,8 @@ import os
 
 from flask import Flask, render_template
 from config import *
-
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
 
 def create_app(test_config=None):
     # create and configure the app
@@ -25,9 +26,37 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    class RequestForm(FlaskForm):
+        genre = StringField('rft.genre')
+        title = StringField('rft.title')
+        stitle = StringField('rft.stitle')
+        atitle = StringField('rft.atitle')
+        date = StringField('rft.pubdate')
+        month = StringField('rft.month')
+        volume = StringField('rft.volume')
+        issue = StringField('rft.issue')
+        number = StringField('rft.number')
+        epage = StringField('rft.epage')
+        spage = StringField('rft.spage')
+        edition = StringField('rft.edition')
+        isbn = StringField('rft.isbn')
+        eisbn = StringField('rft.eisbn')
+        aulast = StringField('rft.aulast')
+        aufirst = StringField('rft.aufirst')
+        auinit = StringField('rft.auinit')
+        pub = StringField('rft.pub')
+        publisher = StringField('rft.publisher')
+        place = StringField('rft.place')
+        doi = StringField('rft.doi')
+        rfe_dat = StringField('rft.oclcnum')
+        rfr_id = StringField('rfr_id')
+        submit = SubmitField('Submit Request')
+
+
     # a simple page that says hello
     @app.route('/')
     def request():
-        return render_template('request.html')
+        form = RequestForm()
+        return render_template('request.html', title='WRLC Custom Request Form', form=form)
 
     return app
