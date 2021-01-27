@@ -4,7 +4,6 @@ from flask import Flask, render_template, request as req
 from config import *
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from urllib.parse import urlparse
 
 
 def create_app(test_config=None):
