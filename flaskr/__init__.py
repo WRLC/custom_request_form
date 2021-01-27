@@ -62,9 +62,11 @@ def create_app(test_config=None):
         for k, v in query.items():
             k = k.replace('.', '_')
             if k == 'rft_au':
-                # for key, value in v:
-                form.rft_aulast.data = v
-                    #form.rft_aufirst.data = value[1]
+                au = v.split(',')
+                aulast = au[0]
+                aufirst = au[1]
+                form.rft_aulast.data = aulast
+                form.rft_aufirst.data = aufirst
             else:
                 form[k].data = v
 
