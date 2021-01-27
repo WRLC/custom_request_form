@@ -70,6 +70,6 @@ def create_app(test_config=None):
             else:
                 form[k].data = v
 
-        return render_template('request.html', title=query, form=form)
+        return render_template('request.html', title='WRLC Custom Request Form', form=form)
 
     return app
