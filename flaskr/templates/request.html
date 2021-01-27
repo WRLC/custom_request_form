@@ -1,31 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>WRLC Custom Request Form</h1>
+  <h1>{{ title }}</h1>
   <form action="" method="post" novalidate>
     {{ form.csrf_token }}
-    <div>{{ form.genre.label }} {{ form.genre(size=32) }}</div>
-    <div>{{ form.title.label }} {{ form.title(size=32) }}</div>
-    <div>{{ form.stitle.label }} {{ form.stitle(size=32) }}</div>
-    <div>{{ form.atitle.label }} {{ form.atitle(size=32) }}</div>
-    <div>{{ form.date.label }} {{ form.date(size=32) }}</div>
-    <div>{{ form.month.label }} {{ form.month(size=32) }}</div>
-    <div>{{ form.volume.label }} {{ form.volume(size=32) }}</div>
-    <div>{{ form.issue.label }} {{ form.issue(size=32) }}</div>
-    <div>{{ form.number.label }} {{ form.number(size=32) }}</div>
-    <div>{{ form.epage.label }} {{ form.epage(size=32) }}</div>
-    <div>{{ form.spage.label }} {{ form.spage(size=32) }}</div>
-    <div>{{ form.edition.label }} {{ form.edition(size=32) }}</div>
-    <div>{{ form.isbn.label }} {{ form.isbn(size=32) }}</div>
-    <div>{{ form.eisbn.label }} {{ form.eisbn(size=32) }}</div>
-    <div>{{ form.aulast.label }} {{ form.aulast(size=32) }}</div>
-    <div>{{ form.aufirst.label }} {{ form.aufirst(size=32) }}</div>
-    <div>{{ form.auinit.label }} {{ form.auinit(size=32) }}</div>
-    <div>{{ form.pub.label }} {{ form.pub(size=32) }}</div>
-    <div>{{ form.publisher.label }} {{ form.publisher(size=32) }}</div>
-    <div>{{ form.place.label }} {{ form.place(size=32) }}</div>
-    <div>{{ form.doi.label }} {{ form.doi(size=32) }}</div>
+    <div>{{ form.rft_genre.label }} {{ form.rft_genre(size=32) }}</div>
+    <div>{{ form.rft_title.label }} {{ form.rft_title(size=32) }}</div>
+    <div>{{ form.rft_stitle.label }} {{ form.rft_stitle(size=32) }}</div>
+    <div>{{ form.rft_atitle.label }} {{ form.rft_atitle(size=32) }}</div>
+    <div>{{ form.rft_date.label }} {{ form.rft_date(size=32) }}</div>
+    <div>{{ form.rft_month.label }} {{ form.rft_month(size=32) }}</div>
+    <div>{{ form.rft_volume.label }} {{ form.rft_volume(size=32) }}</div>
+    <div>{{ form.rft_issue.label }} {{ form.rft_issue(size=32) }}</div>
+    <div>{{ form.rft_number.label }} {{ form.rft_number(size=32) }}</div>
+    <div>{{ form.rft_epage.label }} {{ form.rft_epage(size=32) }}</div>
+    <div>{{ form.rft_spage.label }} {{ form.rft_spage(size=32) }}</div>
+    <div>{{ form.rft_edition.label }} {{ form.rft_edition(size=32) }}</div>
+    <div>{{ form.rft_isbn.label }} {{ form.rft_isbn(size=32) }}</div>
+    <div>{{ form.rft_eisbn.label }} {{ form.rft_eisbn(size=32) }}</div>
+    <div>{{ form.rft_aulast.label }} {{ form.rft_aulast(size=32) }}</div>
+    <div>{{ form.rft_aufirst.label }} {{ form.rft_aufirst(size=32) }}</div>
+    <div>{{ form.rft_auinit.label }} {{ form.rft_auinit(size=32) }}</div>
+    <div>{{ form.rft_pub.label }} {{ form.rft_pub(size=32) }}</div>
+    <div>{{ form.rft_publisher.label }} {{ form.rft_publisher(size=32) }}</div>
+    <div>{{ form.rft_place.label }} {{ form.rft_place(size=32) }}</div>
+    <div>{{ form.rft_doi.label }} {{ form.rft_doi(size=32) }}</div>
     <div>{{ form.rfe_dat.label }} {{ form.rfe_dat(size=32) }}</div>
-    <div>{{ form.genre.label }} {{ form.genre(size=32) }}</div>
     <div>{{ form.rfr_id.label }} {{ form.rfr_id(size=32) }}</div>
     <div>{{ form.submit() }}</div>
   </form>
